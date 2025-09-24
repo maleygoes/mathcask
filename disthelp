@@ -1,0 +1,18 @@
+<!DOCTYPE html><script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script><textarea>
+
+## Example of distributing when there's an exponent involved
+
+So let's say you have $(x+3)^2$ and you're asked to 'expand' or 'distribute' and combine like terms.
+
+First we have to remember that $(x+3)^2 = (x+3)(x+3)$.  All exponents mean are "repeated multiplication."
+
+From here, then we follow the 'double distribution'.
+
+$$(x+3)(x+3)$$
+$$ = (x)(x+3) + (3)(x+3)$$
+$$ = x^2 +3x + 3x + 9$$
+$$ = x^2 + 6x + 9$$
+
+And there we have it.
+
+The only things that would be different are the numbers inside the parentheses, and to be mindful of their sign (positive or negative) when carrying out the operations.

@@ -37,8 +37,8 @@ where (g(x)) (the **forcing function**) is not identically zero.
 
 ### 1. Existence and Uniqueness (Theorem 5.3.1)
 
-If (a_2, a_1, a_0,) and (g) are **continuous** on an open interval (I), and (a_2(x)\neq0) on (I),
-then for any initial conditions (y(x_0)=y_0,; y'(x_0)=y_1),
+If \(a_2, a_1, a_0,\) and \(g\) are **continuous** on an open interval (I), and \(a_2(x)\neq0\) on (I),
+then for any initial conditions \(y(x_0)=y_0,; y'(x_0)=y_1\),
 the IVP has a **unique solution** on (I).
 
 ---
@@ -49,14 +49,14 @@ the IVP has a **unique solution** on (I).
   \[
   a_2y'' + a_1y' + a_0y = 0.
   \]
-* Its general solution (y_c = c_1y_1 + c_2y_2) forms the **complementary solution**.
-* Any single solution (y_p) to the full nonhomogeneous equation is called a **particular solution**.
+* Its general solution \(y_c = c_1y_1 + c_2y_2\) forms the **complementary solution**.
+* Any single solution \(y_p\) to the full nonhomogeneous equation is called a **particular solution**.
 
 ---
 
 ### 3. General Solution (Theorem 5.3.2)
 
-If (y_1, y_2) form a **fundamental set** of solutions of the complementary equation and (y_p) is any particular solution of the full equation, then:
+If \(y_1, y_2\) form a **fundamental set** of solutions of the complementary equation and (y_p) is any particular solution of the full equation, then:
 
 \[
 \boxed{y = y_p + c_1y_1 + c_2y_2}
@@ -68,9 +68,9 @@ is the **general solution** on the interval (I).
 
 ### 4. Strategy for Solving
 
-1. Solve the **complementary equation** → find (y_1, y_2).
-2. **Guess** (or compute) one particular solution (y_p).
-3. Combine: (y = y_p + c_1y_1 + c_2y_2.)
+1. Solve the **complementary equation** → find \(y_1, y_2\).
+2. **Guess** (or compute) one particular solution \(y_p)\.
+3. Combine: \(y = y_p + c_1y_1 + c_2y_2.\)
 
 ---
 
@@ -83,9 +83,9 @@ Equation:
 y'' - 2y' + y = e^x.
 \]
 
-* Complementary: (r^2 - 2r + 1 = 0 \Rightarrow y_c = (c_1 + c_2x)e^x.)
-* Guess (y_p = Ae^x). Substitution shows (A=0); refine to (y_p = Ax^2e^x \Rightarrow A=\tfrac12.)
-* General: (y = (c_1 + c_2x)e^x + \tfrac12x^2e^x.)
+* Complementary: \(r^2 - 2r + 1 = 0 \Rightarrow y_c = (c_1 + c_2x)e^x.\)
+* Guess \(y_p = Ae^x\). Substitution shows \(A=0\); refine to \(y_p = Ax^2e^x \Rightarrow A=\tfrac12.\)
+* General: \(y = (c_1 + c_2x)e^x + \tfrac12x^2e^x.\)
 
 ---
 
@@ -97,7 +97,7 @@ y'' + y = x^2.
 \]
 
 * \(r^2 + 1=0 \Rightarrow y_c = c_1\cos x + c_2\sin x.\)
-* Try (y_p = Ax^2 + Bx + C.)
+* Try \(y_p = Ax^2 + Bx + C.\)
 * Match coefficients ⇒ \(A=1, B=0, C=-2.\)
 * \(y_p = x^2 - 2.\)
 * \(y = c_1\cos x + c_2\sin x + x^2 - 2.\)
@@ -121,8 +121,8 @@ y'' + y = \sin x.
 
 ### 6. Principle of Superposition (Theorem 5.3.3)
 
-If (y_{p1}) solves (L[y]=g_1(x))
-and (y_{p2}) solves (L[y]=g_2(x)),
+If \(y_{p1}\) solves \(L[y]=g_1(x)\)
+and \(y_{p2}\) solves \(L[y]=g_2(x)\),
 then
 \[
 L[y] = g_1(x) + g_2(x)

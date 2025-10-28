@@ -25,8 +25,131 @@ Then we take a linear combination of them:  $x'_1 = \frac{x_1 + x_2}{2}$ and $x'
 Find the general solution to: $y'' + 2y' + 5y = 0$
 
 
-## Non Homogeneous Equations (when RHS $= f(x) \not\equiv 0$)
+## 5.3 Nonhomogeneous Linear Equations
 
+We now consider the **nonhomogeneous linear second-order ODE**
+[
+a_2(x)y'' + a_1(x)y' + a_0(x)y = g(x),
+]
+where (g(x)) (the **forcing function**) is not identically zero.
 
+---
+
+### 1. Existence and Uniqueness (Theorem 5.3.1)
+
+If (a_2, a_1, a_0,) and (g) are **continuous** on an open interval (I), and (a_2(x)\neq0) on (I),
+then for any initial conditions (y(x_0)=y_0,; y'(x_0)=y_1),
+the IVP has a **unique solution** on (I).
+
+---
+
+### 2. Complementary and Particular Solutions
+
+* The **associated homogeneous (complementary) equation**:
+  [
+  a_2y'' + a_1y' + a_0y = 0.
+  ]
+* Its general solution (y_c = c_1y_1 + c_2y_2) forms the **complementary solution**.
+* Any single solution (y_p) to the full nonhomogeneous equation is called a **particular solution**.
+
+---
+
+### 3. General Solution (Theorem 5.3.2)
+
+If (y_1, y_2) form a **fundamental set** of solutions of the complementary equation and (y_p) is any particular solution of the full equation, then:
+
+[
+\boxed{y = y_p + c_1y_1 + c_2y_2}
+]
+
+is the **general solution** on the interval (I).
+
+---
+
+### 4. Strategy for Solving
+
+1. Solve the **complementary equation** → find (y_1, y_2).
+2. **Guess** (or compute) one particular solution (y_p).
+3. Combine: (y = y_p + c_1y_1 + c_2y_2.)
+
+---
+
+### 5. Examples
+
+#### Example 5.3.1
+
+Equation:
+[
+y'' - 2y' + y = e^x.
+]
+
+* Complementary: (r^2 - 2r + 1 = 0 \Rightarrow y_c = (c_1 + c_2x)e^x.)
+* Guess (y_p = Ae^x). Substitution shows (A=0); refine to (y_p = Ax^2e^x \Rightarrow A=\tfrac12.)
+* General: (y = (c_1 + c_2x)e^x + \tfrac12x^2e^x.)
+
+---
+
+#### Example 5.3.2
+
+Equation:
+[
+y'' + y = x^2.
+]
+
+* (r^2 + 1=0 \Rightarrow y_c = c_1\cos x + c_2\sin x.)
+* Try (y_p = Ax^2 + Bx + C.)
+* Match coefficients ⇒ (A=1, B=0, C=-2.)
+* (y_p = x^2 - 2.)
+* (y = c_1\cos x + c_2\sin x + x^2 - 2.)
+
+---
+
+#### Example 5.3.3
+
+Equation:
+[
+y'' + y = \sin x.
+]
+
+* (y_c = c_1\cos x + c_2\sin x.)
+* Guess (y_p = A x \cos x + B x \sin x.)
+* Substitution ⇒ (A=0, B=-\tfrac12.)
+* (y_p = -\tfrac12 x \sin x.)
+* (y = c_1\cos x + c_2\sin x - \tfrac12 x \sin x.)
+
+---
+
+### 6. Principle of Superposition (Theorem 5.3.3)
+
+If (y_{p1}) solves (L[y]=g_1(x))
+and (y_{p2}) solves (L[y]=g_2(x)),
+then
+[
+L[y] = g_1(x) + g_2(x)
+]
+has a particular solution
+[
+\boxed{y_p = y_{p1} + y_{p2}}.
+]
+
+This extends to any finite linear combination of nonhomogeneous terms.
+
+---
+
+### 7. Practical Comments
+
+* “General solution” means: valid on any interval where coefficients and (a_2(x)) are continuous and (a_2(x)\ne0.)
+* If (a_2) has zeros in (I), the solution may not be valid across that point.
+* Most examples use **undetermined coefficients** or **variation of parameters** to find (y_p.)
+
+---
+
+**Summary Formula:**
+[
+\boxed{y = y_p + c_1y_1 + c_2y_2}
+]
+
+**Key idea:**
+Homogeneous part gives structure; nonhomogeneous part shifts it.
 
 

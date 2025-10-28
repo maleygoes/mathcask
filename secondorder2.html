@@ -28,9 +28,9 @@ Find the general solution to: $y'' + 2y' + 5y = 0$
 ## 5.3 Nonhomogeneous Linear Equations
 
 We now consider the **nonhomogeneous linear second-order ODE**
-[
+\[
 a_2(x)y'' + a_1(x)y' + a_0(x)y = g(x),
-]
+\]
 where (g(x)) (the **forcing function**) is not identically zero.
 
 ---
@@ -46,9 +46,9 @@ the IVP has a **unique solution** on (I).
 ### 2. Complementary and Particular Solutions
 
 * The **associated homogeneous (complementary) equation**:
-  [
+  \[
   a_2y'' + a_1y' + a_0y = 0.
-  ]
+  \]
 * Its general solution (y_c = c_1y_1 + c_2y_2) forms the **complementary solution**.
 * Any single solution (y_p) to the full nonhomogeneous equation is called a **particular solution**.
 
@@ -58,9 +58,9 @@ the IVP has a **unique solution** on (I).
 
 If (y_1, y_2) form a **fundamental set** of solutions of the complementary equation and (y_p) is any particular solution of the full equation, then:
 
-[
+\[
 \boxed{y = y_p + c_1y_1 + c_2y_2}
-]
+\]
 
 is the **general solution** on the interval (I).
 
@@ -79,9 +79,9 @@ is the **general solution** on the interval (I).
 #### Example 5.3.1
 
 Equation:
-[
+\[
 y'' - 2y' + y = e^x.
-]
+\]
 
 * Complementary: (r^2 - 2r + 1 = 0 \Rightarrow y_c = (c_1 + c_2x)e^x.)
 * Guess (y_p = Ae^x). Substitution shows (A=0); refine to (y_p = Ax^2e^x \Rightarrow A=\tfrac12.)
@@ -92,30 +92,30 @@ y'' - 2y' + y = e^x.
 #### Example 5.3.2
 
 Equation:
-[
+\[
 y'' + y = x^2.
-]
+\]
 
-* (r^2 + 1=0 \Rightarrow y_c = c_1\cos x + c_2\sin x.)
+* \(r^2 + 1=0 \Rightarrow y_c = c_1\cos x + c_2\sin x.\)
 * Try (y_p = Ax^2 + Bx + C.)
-* Match coefficients ⇒ (A=1, B=0, C=-2.)
-* (y_p = x^2 - 2.)
-* (y = c_1\cos x + c_2\sin x + x^2 - 2.)
+* Match coefficients ⇒ \(A=1, B=0, C=-2.\)
+* \(y_p = x^2 - 2.\)
+* \(y = c_1\cos x + c_2\sin x + x^2 - 2.\)
 
 ---
 
 #### Example 5.3.3
 
 Equation:
-[
+\[
 y'' + y = \sin x.
-]
+\]
 
-* (y_c = c_1\cos x + c_2\sin x.)
-* Guess (y_p = A x \cos x + B x \sin x.)
-* Substitution ⇒ (A=0, B=-\tfrac12.)
-* (y_p = -\tfrac12 x \sin x.)
-* (y = c_1\cos x + c_2\sin x - \tfrac12 x \sin x.)
+* \(y_c = c_1\cos x + c_2\sin x.\)
+* Guess \(y_p = A x \cos x + B x \sin x.\)
+* Substitution ⇒ \(A=0, B=-\tfrac12.\)
+* \(y_p = -\tfrac12 x \sin x.\)
+* \(y = c_1\cos x + c_2\sin x - \tfrac12 x \sin x.\)
 
 ---
 
@@ -124,13 +124,13 @@ y'' + y = \sin x.
 If (y_{p1}) solves (L[y]=g_1(x))
 and (y_{p2}) solves (L[y]=g_2(x)),
 then
-[
+\[
 L[y] = g_1(x) + g_2(x)
-]
+\]
 has a particular solution
-[
+\[
 \boxed{y_p = y_{p1} + y_{p2}}.
-]
+\]
 
 This extends to any finite linear combination of nonhomogeneous terms.
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html><script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script><link rel="stylesheet" href="style.css"><textarea>
+
+## First we recall Euler's formula and why we care
+
+If we are given $e^{ib} = \cos(b) + i \sin(b)$, then we can see for any complex number $z = a+ib$:
+
+$$e^{a+ib} = e^a \cdot e^{ib} = e^a(\cos(b) + i \sin(b))$$
+
+And so:
+
+$$e^{(a \pm ib)t} = e^{at} \cdot e^{\pm ibt} = e^{at}(\cos(bt) \pm i \sin(bt))$$
+
+This forms the basis of solutions in the complex numbers.  If we just take 
+
+$$x_1 = e^{at}(\cos(bt) + i \sin(bt))$$
+
+and 
+
+$$x_2 = e^{at}(\cos(bt) - i \sin(bt))$$
+
+Then we take a linear combination of them:  $x'_1 = \frac{x_1 + x_2}{2}$ and $x'_2 = \frac{x_1 - x_2}{2i}$ we get $\{ x'_1, x'_2 \}$ as general real valued solutions.
+
+### Example
+
+Find the general solution to: $y'' + 2y' + 5y = 0$
+
+

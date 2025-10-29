@@ -1,32 +1,41 @@
+<!DOCTYPE html><script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script><textarea>
+
+
+# Method of Undetermined Coefficients 1
+
+  ## You will find this helpful for solving systems
+  
 To solve systems of equations:
-Desmos | Matrix Calculator
+  
+[Desmos | Matrix Calculator](https://www.desmos.com/matrix)
 
-Ax = B
+$Ax = B$
 
-So x = A^-1 B
+So \( x = A^{-1} B\)
 
-We look at equations of the type
-ay'' + by' + cy = erxG(x)
+
+  
+## Solving equations of the type \(ay'' + by' + cy = e^{rx}G(x)\)
 
 Where G(x) is a polynomial, a,b,c,r are constants.
 
 Examples:
-y'' -5y' + 6y = e-4x
+A) \(y'' -5y' + 6y = e^{-4x}\)
 
-y'' -5y' + 6y = e-3x (uh oh)
+B) \(y'' -5y' + 6y = e^{-3x}\) Uh oh!
 
-So we try y=ue-3x,  y' = u'e-3x-3ue-3x, y'' = u''e-3x-6u'e-3x+9ue-3x
+So we try \(y=ue-3x,  \implies y' = u'e^{-3x}-3ue^{-3x}, y'' = u''e^{-3x}-6u'e^{-3x}+9ue^{-3x}\)
 
 
 Carry it forward, will get a 2nd order constant coeff eqn.  Simple to do. Remember you just found u, not y.
 
 
-y'' -5y' + 6y = e-4x(2+3x+4x2)
+C) y'' -5y' + 6y = e^{-4x}(2+3x+4x^2)
 
 
 You Try
 
-y'' -y' - 12y = e-3x(x+x2)
+D) y'' -y' - 12y = e^{-3x}(x+x^2)
 
 
 

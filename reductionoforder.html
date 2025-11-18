@@ -126,199 +126,168 @@ y_p = \frac{4}{3x^{2}}.
 
   ## Example 2
 
-  \[
-\textbf{Given:}\quad 
-4x^{2}y'' + (4x - 8x^{2})y' + (4x^{2} - 4x - 1)y
-= 4x^{1/2}e^{x}(1+4x),
-\qquad
-y_1(x)=x^{1/2}e^{x}.
+ \[
+\textbf{Problem.}\quad
+4x^{2}y'' + (4x-8x^{2})y' + (4x^{2}-4x-1)y
+= 4x^{1/2}e^{x}(1+4x), 
+\qquad y_1(x)=x^{1/2}e^{x}.
 \]
 
-### Convert to Standard Form
+\section*{1. Use the known solution \(y_1\)}
 
-Divide the entire equation by \(4x^{2}\):
-
+Let
 \[
-y'' + \frac{4x-8x^{2}}{4x^{2}}y' + \frac{4x^{2}-4x-1}{4x^{2}}y
-= \frac{4x^{1/2}e^{x}(1+4x)}{4x^{2}}.
+y = u(x)\,y_1(x) = u(x)\,x^{1/2}e^{x}.
 \]
 
-Simplify coefficients:
-
+Then
 \[
-\frac{4x - 8x^{2}}{4x^{2}} = \frac{1 - 2x}{x},
-\qquad
-\frac{4x^{2} - 4x - 1}{4x^{2}} = 1 - \frac{1}{x} - \frac{1}{4x^{2}},
+y' = u'x^{1/2}e^{x}
+      + u\left(x^{1/2} + \frac{x^{-1/2}}{2}\right)e^{x},
 \]
 \[
-\frac{4x^{1/2}e^{x}(1+4x)}{4x^{2}} = \frac{e^{x}(1+4x)}{x^{3/2}}.
+y'' = u''x^{1/2}e^{x}
+      + 2u'\left(x^{1/2} + \frac{x^{-1/2}}{2}\right)e^{x}
+      + u(\dots)e^{x},
+\]
+where the detailed \(u\)-terms in the last factor are not needed
+because they cancel (since \(y_1\) satisfies the complementary
+equation).
+
+Substitute \(y,y',y''\) into the left-hand side
+\[
+L[y] = 4x^{2}y'' + (4x-8x^{2})y' + (4x^{2}-4x-1)y.
 \]
 
-Thus standard form is:
-
+After collecting terms and using that \(y_1\) satisfies the
+homogeneous equation, all terms containing \(u\) drop out and we get
 \[
-y'' + \frac{1-2x}{x}y' + \left(1 - \frac{1}{x} - \frac{1}{4x^{2}}\right)y
-= \frac{e^{x}(1+4x)}{x^{3/2}}.
+L[y] = e^{x}\bigl(4x^{5/2}u'' + 8x^{3/2}u'\bigr).
 \]
 
-### Reduction of Order for Second Homogeneous Solution
-
-We are given the homogeneous solution
+We want \(L[y]\) to equal the right-hand side
+\(4x^{1/2}e^{x}(1+4x)\).  Thus we require
 \[
-y_1(x)= x^{1/2}e^{x}.
+e^{x}\bigl(4x^{5/2}u'' + 8x^{3/2}u'\bigr)
+= 4x^{1/2}e^{x}(1+4x).
 \]
 
-Assume
+Cancel \(4e^{x}x^{1/2}\):
 \[
-y_2(x)=v(x)y_1(x)=v(x)x^{1/2} e^{x}.
+x^{2}u'' + 2xu' = 1 + 4x.
 \]
 
-\subsection*{Compute derivatives}
+\section*{2. First-order equation for \(z = u'\)}
 
+Let
 \[
-y_2' = v'x^{1/2}e^{x} + v\left(\frac{1}{2}x^{-1/2}e^{x} + x^{1/2}e^{x}\right),
+z = u', \quad z' = u''.
 \]
 
+Then
 \[
-y_2'' = v''x^{1/2}e^{x} 
-+ 2v'\left(\frac{1}{2}x^{-1/2}e^{x}+x^{1/2}e^{x}\right)
-+ v\left(\frac{d}{dx}\Big(\frac{1}{2}x^{-1/2}e^{x}+x^{1/2}e^{x}\Big)\right).
+x^{2}z' + 2xz = 1 + 4x.
 \]
 
-Since the formula becomes messy, we use the standard reduction formula:
-
+Divide by \(x^{2}\):
 \[
-y_2(x) = y_1(x)\int \frac{e^{-\int P(x)\,dx}}{y_1(x)^2}\,dx,
-\]
-where
-\[
-P(x) = \frac{1-2x}{x}.
+z' + \frac{2}{x}z = \frac{1+4x}{x^{2}}.
+\tag{A}
 \]
 
-### Compute integrating factor
+\section*{3. Solve the linear first-order equation (A)}
 
+The complementary equation for (A) is
 \[
-\int P(x)\,dx = \int \frac{1-2x}{x}\,dx
-= \int \left(\frac{1}{x} - 2\right)\,dx
-= \ln|x| - 2x.
+z' + \frac{2}{x}z = 0.
 \]
 
-Thus
+A solution is
 \[
-e^{-\int P(x)\,dx} = e^{-(\ln|x|-2x)} = e^{2x}x^{-1}.
+z_1 = \frac{2}{x^{2}},
+\]
+so general solutions of (A) can be sought in the form
+\[
+z = \frac{v}{x^{2}}.
+\tag{B}
 \]
 
-\subsection*{Apply formula}
-
+Compute
 \[
-y_1(x)^2 = x e^{2x}.
+z' = \frac{v'}{x^{2}} - \frac{2v}{x^{3}}.
+\]
+
+Substitute (B) into (A):
+\[
+\left(\frac{v'}{x^{2}} - \frac{2v}{x^{3}}\right)
++ \frac{2}{x}\cdot\frac{v}{x^{2}}
+= \frac{1+4x}{x^{2}}.
+\]
+
+The \(v\)-terms cancel:
+\[
+\frac{v'}{x^{2}} = \frac{1+4x}{x^{2}},
+\]
+so
+\[
+v' = 1 + 4x.
+\]
+
+Integrate:
+\[
+v = x + 2x^{2} + C_1.
 \]
 
 Therefore,
 \[
-\frac{e^{-\int P(x)\,dx}}{y_1^2}
-= \frac{x^{-1}e^{2x}}{x e^{2x}}
-= x^{-2}.
+z = u' = \frac{v}{x^{2}} 
+      = \frac{x+2x^{2}+C_1}{x^{2}}
+      = \frac{1}{x} + 2 + \frac{C_1}{x^{2}}.
 \]
+
+\section*{4. Integrate to find \(u\)}
 
 \[
-y_2(x)
-= x^{1/2}e^{x}\int x^{-2}\,dx
-= x^{1/2}e^{x}(-x^{-1}) + C
-= -x^{-1/2}e^{x}.
+u = \int u'\,dx
+  = \int\left(\frac{1}{x} + 2 + \frac{C_1}{x^{2}}\right)dx
+  = \ln x + 2x - \frac{C_1}{x} + C_2.
 \]
 
-So a fundamental set of homogeneous solutions is:
-\[
-y_h(x)=C_1 x^{1/2}e^{x} + C_2 x^{-1/2}e^{x}.
-\]
-
-### Particular Solution via Variation of Parameters
-
-Let
-\[
-y = u_1(x)y_1(x) + u_2(x)y_2(x).
-\]
-
-We use the known formula for the particular solution:
+\section*{5. Substitute back to get \(y\)}
 
 \[
-y_p = -y_1 \int \frac{y_2\,g(x)}{W}\,dx
-+ y_2 \int \frac{y_1\,g(x)}{W}\,dx,
+y = u\,x^{1/2}e^{x}
+  = x^{1/2}e^{x}
+    \left(\ln x + 2x - \frac{C_1}{x} + C_2\right).
 \]
-where
+
+Rearrange terms:
 \[
-g(x)=\frac{e^{x}(1+4x)}{x^{3/2}},
-\]
-and \(W\) is the Wronskian.
-
-#### Compute Wronskian
-
-\[
-W = 
-\begin{vmatrix}
-y_1 & y_2 \\
-y_1' & y_2'
-\end{vmatrix}
-=
-\begin{vmatrix}
-x^{1/2}e^{x} & x^{-1/2}e^{x}\\
-\left(\frac{1}{2}x^{-1/2}e^{x}+x^{1/2}e^{x}\right) &
-\left(-\frac{1}{2}x^{-3/2}e^{x}+x^{-1/2}e^{x}\right)
-\end{vmatrix}.
+y = e^{x}\Bigl(
+      2x^{3/2}
+      + x^{1/2}\ln x
+      - C_1 x^{-1/2}
+      + C_2 x^{1/2}
+    \Bigr).
 \]
 
-Factoring out \(e^{2x}\):
-
-\[
-W = e^{2x}
-\begin{vmatrix}
-x^{1/2} & x^{-1/2}\\
-\frac{1}{2}x^{-1/2}+x^{1/2} &
--\frac{1}{2}x^{-3/2}+x^{-1/2}
-\end{vmatrix}
-= e^{2x}\cdot \left(-x^{-1}\right)
-= -x^{-1}e^{2x}.
-\]
-
-#### Compute integrals
-
-\[
-\frac{y_1 g(x)}{W}
-= \frac{x^{1/2}e^{x}\cdot \frac{e^{x}(1+4x)}{x^{3/2}}}{-x^{-1}e^{2x}}
-= \frac{(1+4x)/x}{-x^{-1}}
-= -(1+4x).
-\]
-
-\[
-\int -(1+4x)\,dx = -\left(x+2x^{2}\right).
-\]
-
-Then:
-
-\[
-y_p(x)
-= y_2(x)\cdot \left[-\left(x+2x^{2}\right)\right]
-= x^{-1/2}e^{x}(x+2x^{2})
-= x^{1/2}e^{x}(1+2x).
-\]
-
-\section*{4. General Solution}
-
+Rename constants 
+(\(-C_1\) and \(C_2\) are arbitrary), and separate homogeneous and
+particular parts:
 \[
 \boxed{
-y(x)
-= C_1 x^{1/2}e^{x}
+y(x) =
+C_1 x^{1/2}e^{x}
 + C_2 x^{-1/2}e^{x}
-+ x^{1/2}e^{x}(1+2x)
++ x^{1/2}e^{x}\ln x
++ 2x^{3/2}e^{x}
 }.
 \]
 
+Thus \(\{x^{1/2}e^{x},\,x^{-1/2}e^{x}\}\) is a fundamental set of
+solutions of the complementary equation, and
 \[
-\boxed{
-y(x)= e^{x}\left(C_1 x^{1/2} + C_2 x^{-1/2} + x^{1/2}(1+2x)\right)
-}.
+y_p(x) = x^{1/2}e^{x}\ln x + 2x^{3/2}e^{x}
 \]
-
-
+is a particular solution of the nonhomogeneous equation.
 

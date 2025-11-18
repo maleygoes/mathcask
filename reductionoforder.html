@@ -291,3 +291,149 @@ y_p(x) = x^{1/2}e^{x}\ln x + 2x^{3/2}e^{x}
 \]
 is a particular solution of the nonhomogeneous equation.
 
+
+## Example 3
+
+  \[
+\textbf{Given:}\quad 
+4x^{2}(\sin x)\,y'' - 4x(x\cos x + \sin x)\,y' + (2x\cos x + 3\sin x)\,y = 0,
+\qquad
+y_1(x) = x^{1/2}.
+\]
+
+\section*{1. Put the equation in standard form}
+
+Divide both sides by \(4x^{2}\sin x\) (assume \(x\neq 0\), \(\sin x \neq 0\)):
+
+\[
+y'' - \frac{4x(x\cos x + \sin x)}{4x^{2}\sin x}y'
+     + \frac{2x\cos x + 3\sin x}{4x^{2}\sin x}y = 0.
+\]
+
+Simplify the coefficient of \(y'\):
+
+\[
+\frac{4x(x\cos x + \sin x)}{4x^{2}\sin x}
+= \frac{x\cos x + \sin x}{x\sin x}
+= \frac{x\cos x}{x\sin x} + \frac{\sin x}{x\sin x}
+= \cot x + \frac{1}{x}.
+\]
+
+So the standard form is
+
+\[
+y'' + P(x)y' + Q(x)y = 0,
+\]
+
+where
+
+\[
+P(x) = -\left(\cot x + \frac{1}{x}\right),
+\qquad
+Q(x) = \frac{2x\cos x + 3\sin x}{4x^{2}\sin x}.
+\]
+
+\section*{2. Reduction of order to find a second solution}
+
+We are given one solution of the homogeneous equation:
+
+\[
+y_1(x) = x^{1/2}.
+\]
+
+For a second solution \(y_2\), use the standard reduction-of-order formula:
+
+\[
+y_2(x) = y_1(x)\int \frac{e^{-\int P(x)\,dx}}{y_1(x)^2}\,dx.
+\]
+
+\subsection*{Compute \(\int P(x)\,dx\)}
+
+\[
+P(x) = -\cot x - \frac{1}{x},
+\]
+
+so
+
+\[
+\int P(x)\,dx
+= \int\left(-\cot x - \frac{1}{x}\right)dx
+= -\int \cot x\,dx - \int \frac{1}{x}\,dx.
+\]
+
+Recall \(\displaystyle \int \cot x\,dx = \ln|\sin x|\). Hence
+
+\[
+\int P(x)\,dx
+= -\ln|\sin x| - \ln|x|
+= -\ln|x\sin x|.
+\]
+
+Therefore
+
+\[
+e^{-\int P(x)\,dx}
+= e^{\ln|x\sin x|}
+= x\sin x
+\quad (\text{on an interval where }x\sin x>0).
+\]
+
+\subsection*{Form the integrand}
+
+Since \(y_1(x) = x^{1/2}\), we have
+
+\[
+y_1(x)^2 = x.
+\]
+
+Thus
+
+\[
+\frac{e^{-\int P(x)\,dx}}{y_1(x)^2}
+= \frac{x\sin x}{x}
+= \sin x.
+\]
+
+\subsection*{Integrate}
+
+\[
+\int \sin x\,dx = -\cos x + C.
+\]
+
+We may ignore the constant \(C\) (it only reproduces a multiple of \(y_1\)), so take
+
+\[
+\int \frac{e^{-\int P(x)\,dx}}{y_1(x)^2}\,dx = -\cos x.
+\]
+
+Hence
+
+\[
+y_2(x)
+= y_1(x)(-\cos x)
+= -x^{1/2}\cos x.
+\]
+
+Any nonzero constant multiple is acceptable, so we can take
+
+\[
+y_2(x) = x^{1/2}\cos x.
+\]
+
+\section*{3. General solution}
+
+A fundamental set of solutions of the differential equation is
+\[
+y_1(x) = x^{1/2}, \qquad y_2(x) = x^{1/2}\cos x.
+\]
+
+Therefore, the general solution is
+
+\[
+\boxed{
+y(x) = C_1 x^{1/2} + C_2 x^{1/2}\cos x
+}.
+\]
+
+
+

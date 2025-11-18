@@ -1,9 +1,11 @@
 <!DOCTYPE html><script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script><textarea>
-\[
+
+  ## Example 1
+  \[
 \textbf{Given:}\qquad x^{2}y'' + xy' - y = \frac{4}{x^{2}},\qquad y_1(x)=x
 \]
 
-\section*{1. Solve the Homogeneous Equation}
+### 1. Solve the Homogeneous Equation
 
 Solve
 \[
@@ -82,7 +84,7 @@ Thus the homogeneous solution is:
 y_h(x) = C_1 x + C_2 \frac{1}{x}.
 \]
 
-\section*{2. Find a Particular Solution}
+### Find a Particular Solution
 
 Try:
 \[
@@ -116,10 +118,206 @@ Thus:
 y_p = \frac{4}{3x^{2}}.
 \]
 
-\section*{3. General Solution}
+### General Solution
 
 \[
 \boxed{y(x) = C_1 x + C_2 x^{-1} + \frac{4}{3}x^{-2}}.
+\]
+
+  ## Example 2
+
+  \[
+\textbf{Given:}\quad 
+4x^{2}y'' + (4x - 8x^{2})y' + (4x^{2} - 4x - 1)y
+= 4x^{1/2}e^{x}(1+4x),
+\qquad
+y_1(x)=x^{1/2}e^{x}.
+\]
+
+### Convert to Standard Form
+
+Divide the entire equation by \(4x^{2}\):
+
+\[
+y'' + \frac{4x-8x^{2}}{4x^{2}}y' + \frac{4x^{2}-4x-1}{4x^{2}}y
+= \frac{4x^{1/2}e^{x}(1+4x)}{4x^{2}}.
+\]
+
+Simplify coefficients:
+
+\[
+\frac{4x - 8x^{2}}{4x^{2}} = \frac{1 - 2x}{x},
+\qquad
+\frac{4x^{2} - 4x - 1}{4x^{2}} = 1 - \frac{1}{x} - \frac{1}{4x^{2}},
+\]
+\[
+\frac{4x^{1/2}e^{x}(1+4x)}{4x^{2}} = \frac{e^{x}(1+4x)}{x^{3/2}}.
+\]
+
+Thus standard form is:
+
+\[
+y'' + \frac{1-2x}{x}y' + \left(1 - \frac{1}{x} - \frac{1}{4x^{2}}\right)y
+= \frac{e^{x}(1+4x)}{x^{3/2}}.
+\]
+
+### Reduction of Order for Second Homogeneous Solution
+
+We are given the homogeneous solution
+\[
+y_1(x)= x^{1/2}e^{x}.
+\]
+
+Assume
+\[
+y_2(x)=v(x)y_1(x)=v(x)x^{1/2} e^{x}.
+\]
+
+\subsection*{Compute derivatives}
+
+\[
+y_2' = v'x^{1/2}e^{x} + v\left(\frac{1}{2}x^{-1/2}e^{x} + x^{1/2}e^{x}\right),
+\]
+
+\[
+y_2'' = v''x^{1/2}e^{x} 
++ 2v'\left(\frac{1}{2}x^{-1/2}e^{x}+x^{1/2}e^{x}\right)
++ v\left(\frac{d}{dx}\Big(\frac{1}{2}x^{-1/2}e^{x}+x^{1/2}e^{x}\Big)\right).
+\]
+
+Since the formula becomes messy, we use the standard reduction formula:
+
+\[
+y_2(x) = y_1(x)\int \frac{e^{-\int P(x)\,dx}}{y_1(x)^2}\,dx,
+\]
+where
+\[
+P(x) = \frac{1-2x}{x}.
+\]
+
+### Compute integrating factor
+
+\[
+\int P(x)\,dx = \int \frac{1-2x}{x}\,dx
+= \int \left(\frac{1}{x} - 2\right)\,dx
+= \ln|x| - 2x.
+\]
+
+Thus
+\[
+e^{-\int P(x)\,dx} = e^{-(\ln|x|-2x)} = e^{2x}x^{-1}.
+\]
+
+\subsection*{Apply formula}
+
+\[
+y_1(x)^2 = x e^{2x}.
+\]
+
+Therefore,
+\[
+\frac{e^{-\int P(x)\,dx}}{y_1^2}
+= \frac{x^{-1}e^{2x}}{x e^{2x}}
+= x^{-2}.
+\]
+
+\[
+y_2(x)
+= x^{1/2}e^{x}\int x^{-2}\,dx
+= x^{1/2}e^{x}(-x^{-1}) + C
+= -x^{-1/2}e^{x}.
+\]
+
+So a fundamental set of homogeneous solutions is:
+\[
+y_h(x)=C_1 x^{1/2}e^{x} + C_2 x^{-1/2}e^{x}.
+\]
+
+### Particular Solution via Variation of Parameters
+
+Let
+\[
+y = u_1(x)y_1(x) + u_2(x)y_2(x).
+\]
+
+We use the known formula for the particular solution:
+
+\[
+y_p = -y_1 \int \frac{y_2\,g(x)}{W}\,dx
++ y_2 \int \frac{y_1\,g(x)}{W}\,dx,
+\]
+where
+\[
+g(x)=\frac{e^{x}(1+4x)}{x^{3/2}},
+\]
+and \(W\) is the Wronskian.
+
+#### Compute Wronskian
+
+\[
+W = 
+\begin{vmatrix}
+y_1 & y_2 \\
+y_1' & y_2'
+\end{vmatrix}
+=
+\begin{vmatrix}
+x^{1/2}e^{x} & x^{-1/2}e^{x}\\
+\left(\frac{1}{2}x^{-1/2}e^{x}+x^{1/2}e^{x}\right) &
+\left(-\frac{1}{2}x^{-3/2}e^{x}+x^{-1/2}e^{x}\right)
+\end{vmatrix}.
+\]
+
+Factoring out \(e^{2x}\):
+
+\[
+W = e^{2x}
+\begin{vmatrix}
+x^{1/2} & x^{-1/2}\\
+\frac{1}{2}x^{-1/2}+x^{1/2} &
+-\frac{1}{2}x^{-3/2}+x^{-1/2}
+\end{vmatrix}
+= e^{2x}\cdot \left(-x^{-1}\right)
+= -x^{-1}e^{2x}.
+\]
+
+#### Compute integrals
+
+\[
+\frac{y_1 g(x)}{W}
+= \frac{x^{1/2}e^{x}\cdot \frac{e^{x}(1+4x)}{x^{3/2}}}{-x^{-1}e^{2x}}
+= \frac{(1+4x)/x}{-x^{-1}}
+= -(1+4x).
+\]
+
+\[
+\int -(1+4x)\,dx = -\left(x+2x^{2}\right).
+\]
+
+Then:
+
+\[
+y_p(x)
+= y_2(x)\cdot \left[-\left(x+2x^{2}\right)\right]
+= x^{-1/2}e^{x}(x+2x^{2})
+= x^{1/2}e^{x}(1+2x).
+\]
+
+\section*{4. General Solution}
+
+\[
+\boxed{
+y(x)
+= C_1 x^{1/2}e^{x}
++ C_2 x^{-1/2}e^{x}
++ x^{1/2}e^{x}(1+2x)
+}.
+\]
+
+\[
+\boxed{
+y(x)= e^{x}\left(C_1 x^{1/2} + C_2 x^{-1/2} + x^{1/2}(1+2x)\right)
+}.
 \]
 
 

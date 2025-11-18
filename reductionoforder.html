@@ -1,1 +1,126 @@
+<!DOCTYPE html><script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script><textarea>
+\[
+\textbf{Given:}\qquad x^{2}y'' + xy' - y = \frac{4}{x^{2}},\qquad y_1(x)=x
+\]
+
+\section*{1. Solve the Homogeneous Equation}
+
+Solve
+\[
+x^{2}y'' + xy' - y = 0.
+\]
+
+Given one solution:
+\[
+y_1(x) = x.
+\]
+
+Use reduction of order. Assume
+\[
+y_2(x)=v(x)y_1(x)=v(x)x.
+\]
+
+Then
+\[
+y_2' = v'x + v,\qquad
+y_2'' = v''x + 2v'.
+\]
+
+Substitute into the homogeneous equation:
+\[
+x^{2}(v''x+2v') + x(v'x+v) - (vx)=0.
+\]
+
+Simplify:
+\[
+x^{3}v'' + 3x^{2}v' = 0.
+\]
+
+Divide by \(x^{2}\neq 0\):
+\[
+xv'' + 3v' = 0.
+\]
+
+Let \(w=v'\), so \(w'=v''\). Then:
+\[
+x w' + 3w = 0
+\quad\Longrightarrow\quad
+w' + \frac{3}{x}w = 0.
+\]
+
+Separate:
+\[
+\frac{dw}{w} = -\frac{3}{x}\,dx.
+\]
+
+Integrate:
+\[
+\ln|w| = -3\ln|x| + C
+\quad\Longrightarrow\quad
+w = v' = Cx^{-3}.
+\]
+
+Integrate again:
+\[
+v = \int Cx^{-3}\,dx
+= C\left(\frac{x^{-2}}{-2}\right) + C_2
+= -\frac{C}{2x^{2}} + C_2.
+\]
+
+Ignoring the \(C_2 x\) term (it reproduces \(y_1\)), take:
+\[
+v(x)=\frac{1}{x^{2}}.
+\]
+
+Therefore:
+\[
+y_2 = v(x)x = x\cdot \frac{1}{x^{2}} = \frac{1}{x}.
+\]
+
+Thus the homogeneous solution is:
+\[
+y_h(x) = C_1 x + C_2 \frac{1}{x}.
+\]
+
+\section*{2. Find a Particular Solution}
+
+Try:
+\[
+y_p = \frac{A}{x^{2}}.
+\]
+
+Compute derivatives:
+\[
+y_p' = -\frac{2A}{x^{3}},\qquad
+y_p'' = \frac{6A}{x^{4}}.
+\]
+
+Substitute into the equation \(x^{2}y'' + xy' - y\):
+\[
+x^{2}\left(\frac{6A}{x^{4}}\right) + x\left(-\frac{2A}{x^{3}}\right) - \frac{A}{x^{2}}
+= \frac{6A}{x^{2}} - \frac{2A}{x^{2}} - \frac{A}{x^{2}}
+= \frac{3A}{x^{2}}.
+\]
+
+We need:
+\[
+\frac{3A}{x^{2}} = \frac{4}{x^{2}}
+\quad\Longrightarrow\quad
+3A = 4
+\quad\Longrightarrow\quad
+A = \frac{4}{3}.
+\]
+
+Thus:
+\[
+y_p = \frac{4}{3x^{2}}.
+\]
+
+\section*{3. General Solution}
+
+\[
+\boxed{y(x) = C_1 x + C_2 x^{-1} + \frac{4}{3}x^{-2}}.
+\]
+
+
 
